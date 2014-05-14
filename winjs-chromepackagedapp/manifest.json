@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "WinJS Chrome Packaged App",
+  "description": "WinJS Chrome Packaged App",
+  "version": "0.1",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { 
+    "128": "hello-128.png"
+  }
+}

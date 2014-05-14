@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="./ui-light.css" rel="stylesheet">
+<link href="./app.css" rel="stylesheet">
+<script src="./base.js"></script>
+<script src="./ui.js"></script>
+<script src="./app.js"></script>
+</head>
+<body>
+
+<!-- first listview sample from http://try.buildwinjs.com/#listview -->
+
+<!-- Simple template for the ListView instantiation  -->
+<div id="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+    <div class="smallListIconTextItem">
+        <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
+        <div class="smallListIconTextItem-Detail">
+            <h4 data-win-bind="textContent: title"></h4>
+            <h6 data-win-bind="textContent: text"></h6>
+        </div>
+    </div>
+</div>
+
+<!-- Edgar suggested I try this to see if it is template related and it indeed fixes it. -->
+<!-- div id="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" data-win-options="{disableOptimizedProcessing: true}" style="display: none">
+    <div class="smallListIconTextItem">
+        <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
+        <div class="smallListIconTextItem-Detail">
+            <h4 data-win-bind="textContent: title"></h4>
+            <h6 data-win-bind="textContent: text"></h6>
+        </div>
+    </div>
+</div -->
+
+<!-- The declarative markup necesary for ListView instantiation -->
+<!-- Call WinJS.UI.processAll() in your initialization code -->
+<div id="listView"
+        class="win-selectionstylefilled"
+        data-win-control="WinJS.UI.ListView"
+        data-win-options="{
+            itemDataSource: Sample.ListView.data.dataSource,
+            itemTemplate: smallListIconTextTemplate,
+            selectionMode: 'none',
+            tapBehavior: 'none',
+            swipeBehavior: 'none',
+            layout: { type: WinJS.UI.ListLayout }
+    }">
+</div>
+
+</body>
+</html>
