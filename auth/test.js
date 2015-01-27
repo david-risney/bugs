@@ -39,7 +39,7 @@
         break;
 
     case "redirect":
-        navigateTo(query[uri]);
+        navigateTo(query["uri"]);
         break;
 
     default:
